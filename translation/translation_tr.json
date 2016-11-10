@@ -1,0 +1,11 @@
+{
+    "COLOR" : "Renk",
+    "HELLO" : "Selam",
+    "HELLO_WORLD" : " Merhaba!",
+    "ADD_EDIT_SCHOOL" : "Okul Ekle/Cikar",
+    "SCHOOL_NAME_LABEL" : "Okul Ismi",
+    "SCHOOL_ID_LABEL" : "Okul Numarasi",
+    "SCHOOL_MANAGER_LABEL" : "Maneger Ismi",
+    "SCHOOL_TELEPHONE_LABEL" : "Okul Telefonu",
+    "EXPIRATION_DATE_LABEL" : "Son Tarih"
+}

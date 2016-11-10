@@ -1,0 +1,21 @@
+<modal-dialog>
+	<div class="modal-header">
+		<h3 class="modal-title">Admin Dialog</h3>
+	</div>
+	<div class="modal-body">
+		<div>
+			You have to enter super admin password to perform this operation.
+		</div>
+		<div style="margin-top:5px;">
+			<form ng-submit="submit()">
+				<div class="form-group">
+					<input data-ng-model="adminpassInput" class="form-control" id="adminpassInput" type="password" value="" size="20" name="password" placeholder="Admin password" required>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-click="submit()">OK</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+	</div>
+</modal-dialog>

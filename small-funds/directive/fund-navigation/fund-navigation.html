@@ -1,0 +1,7 @@
+<ul class="nav nav-pills small-fund-navigation">
+    <li role="presentation" ng-class="{'active': currentMenuItem === 'information'}"><a href="#/institutional-investor/{{fund.fundId}}">Information</a></li>
+    <li role="presentation" ng-class="{'active': currentMenuItem === 'holdings'}"><a href="#/institutional-investor/{{fund.fundId}}/holdings">Holdings</a></li>
+    <li role="presentation" ng-class="{'active': currentMenuItem === '13f-filings'}"><a href="#/institutional-investor/{{fund.fundId}}/13f-filings">13F Filings</a></li>
+    <li role="presentation"><a href="{{fund.fundUrl}}" target="_blank">Site URL</a></li>
+    <li role="presentation"><a href="{{fund.holdingsUrl}}" target="_blank">Holdings Site URL</a></li>
+</ul>

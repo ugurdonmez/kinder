@@ -1,0 +1,22 @@
+<div ng-controller="BranchCtrl">
+
+    <p> branch controller </p>
+
+    <form ng-submit="addBranch()" name="addCusipForm">
+
+        <div class="form-group">
+            <label for="cusipInput">Name</label>
+            <input data-ng-model="name" id="" class="" type="text" value="" name="" placeholder="name" required >
+            <label for="cusipInput">Manager</label>
+            <input data-ng-model="manager" id="" class="" type="text" value="" name="" placeholder="name" required >
+            <label for="cusipInput">Telephone</label>
+            <input data-ng-model="telephone" id="" class="" type="text" value="" name="" placeholder="name" required >
+            <label for="cusipInput">Address</label>
+            <input data-ng-model="address" id="" class="" type="text" value="" name="" placeholder="name" required >
+        </div>
+         <div class="form-group">
+            <button class="" type="submit" ng-disabled="">Submit</button>
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,145 @@
+<div ng-controller="SmallFundHoldingCtrl" class="app-view fund-view container-fluid">
+    <div class="page-header">
+        <h1>Institutional Investor - {{fund.name}} - Holding - {{fundHolding.id}}</h1>
+    </div>
+
+    <small-fund-navigation fund="fund"></small-fund-navigation>
+
+    <div ng-if="fetchFundSuccess == false">
+        <div class="alert alert-danger" role="alert">
+            {{fetchFundMessage}}
+        </div>
+    </div>
+
+    <div ng-if="fetchFundHoldingSuccess == false">
+        <div class="alert alert-danger" role="alert">
+            {{fetchFundHoldingMessage}}
+        </div>
+    </div>
+
+	<div class="panel panel-default" >
+		<div class="panel-heading">
+			<a class="collapse-link" style="cursor:pointer" data-toggle="collapse" data-target="#updateFundHoldingPanel">Update Holding</a>
+		</div>
+		<div id="updateFundHoldingPanel" class="panel-body collapse in" >
+			<form ng-submit="updateFundHolding()" name="updateFundHoldingForm">
+				<div class="row">
+					<div class="col-md-12">
+						<div ng-if="fundHoldingUpdateSuccess == false">
+							<div class="alert alert-danger" role="alert">
+								{{fundHoldingUpdateMessage}}
+							</div>
+						</div>
+						<div ng-if="fundHoldingUpdateSuccess == true">
+							<div class="alert alert-success" role="alert">
+								{{fundHoldingUpdateMessage}}
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="fundHoldingIdInput">ID</label>
+							<input data-ng-model="fundHolding.id" id="fundHoldingIdInput" class="form-control" type="text" value="" name="id" placeholder="ID" required disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="funHoldingNameInput">Name</label>
+							<input data-ng-model="fundHolding.fundName" id="funHoldingNameInput" class="form-control" type="text" value="" name="fundName" placeholder="Name" required disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingFundIdInput">ID</label>
+							<input data-ng-model="fundHolding.fundId" id="fundHoldingFundIdInput" class="form-control" type="text" value="" name="fundId" placeholder="ID" required disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingFilingPeriodInput">Filing Period</label>
+							<input data-ng-model="fundHolding.filingPeriod" id="fundHoldingFilingPeriodInput" class="form-control" type="text" value="" name="filingPeriod" placeholder="Filing Period" required disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingTypeInput">Type</label>
+							<input data-ng-model="fundHolding.type" id="fundHoldingTypeInput" class="form-control" type="text" value="" name="type" placeholder="Type">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingType2Input">Type2</label>
+							<input data-ng-model="fundHolding.type2" id="fundHoldingType2Input" class="form-control" type="text" value="" name="type2" placeholder="Type2">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingCusip8Input">Cusip8</label>
+							<input data-ng-model="fundHolding.cusip8" id="fundHoldingCusip8Input" class="form-control" type="text" value="" name="cusip8" placeholder="Cusip8" required disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingCusip9Input">Cusip9</label>
+							<input data-ng-model="fundHolding.cusip9" id="fundHoldingCusip9Input" class="form-control" type="text" value="" name="cusip9" placeholder="Cusip9" required disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingValueInput">Value</label>
+							<input data-ng-model="fundHolding.value" id="fundHoldingValueInput" class="form-control" type="text" value="" name="value" placeholder="Value" required>
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingNSharesInput">NShares</label>
+							<input data-ng-model="fundHolding.nShares" id="fundHoldingNSharesInput" class="form-control" type="text" value="" name="nShares" placeholder="NShares" required>
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingOptionInput">Option</label>
+							<input data-ng-model="fundHolding.option" id="fundHoldingOptionInput" class="form-control" type="text" value="" name="option" placeholder="Option">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label for="fundHoldingTickerInput">Ticker</label>
+							<input data-ng-model="fundHolding.ticker" id="fundHoldingTickerInput" class="form-control" type="text" value="" name="ticker" placeholder="Ticker" required disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingCompanyNameInput">Company Name</label>
+							<input data-ng-model="fundHolding.companyName" id="fundHoldingCompanyNameInput" class="form-control" type="text" value="" name="companyName" placeholder="Company Name" required>
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingTickerCikInput">Ticker CIK</label>
+							<input data-ng-model="fundHolding.tickerCik" id="fundHoldingTickerCikInput" class="form-control" type="text" value="" name="tickerCik" placeholder="Ticker CIK" required>
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingPercentageInput">Percentage</label>
+							<input data-ng-model="fundHolding.percentage" id="fundHoldingPercentageInput" class="form-control" type="text" value="" name="percentage" placeholder="Percentage" disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingSectorInput">Sector</label>
+							<input data-ng-model="fundHolding.sector" id="fundHoldingSectorInput" class="form-control" type="text" value="" name="sector" placeholder="Sector" disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingIndustryInput">Industry</label>
+							<input data-ng-model="fundHolding.industry" id="fundHoldingIndustryInput" class="form-control" type="text" value="" name="industry" placeholder="Industry" disabled="disabled">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingValueChangeInput">Value Change</label>
+							<input data-ng-model="fundHolding.valueChange" id="fundHoldingValueChangeInput" class="form-control" type="text" value="" name="valueChange" placeholder="Value Change" required>
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingActivityInput">Activity</label>
+							<input data-ng-model="fundHolding.activity" id="fundHoldingActivityInput" class="form-control" type="text" value="" name="activity" placeholder="Activity" required>
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingValuePreviousInput">Value Previous</label>
+							<input data-ng-model="fundHolding.valuePrevious" id="fundHoldingValuePreviousInput" class="form-control" type="text" value="" name="valuePrevious" placeholder="Value Previous">
+						</div>
+						<div class="form-group">
+							<label for="fundHoldingNSharesPreviousInput">NShares Previous</label>
+							<input data-ng-model="fundHolding.nSharesPrevious" id="fundHoldingNSharesPreviousInput" class="form-control" type="text" value="" name="nSharesPrevious" placeholder="NShares Previous">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label for="adminPassInput">Admin Password</label>
+							<input data-ng-model="fundHoldingInputAdminpass" class="form-control" id="adminPassInput" type="password" value="" size="20" name="password" placeholder="Admin password" required>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-primary" type="submit" ng-disabled="updateFundHoldingForm.$invalid">Submit</button>
+							<button class="btn btn-secondary" type="button" data-ng-click="initFundHoldingObject()">Clear</button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

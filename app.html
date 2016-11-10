@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link rel="icon" href="//d13a9k2cw5p3go.cloudfront.net/img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="//d13a9k2cw5p3go.cloudfront.net/img/apple-touch-icon.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="114x114" href="//d13a9k2cw5p3go.cloudfront.net/img/apple-touch-icon-114x114-precomposed.png" type="image/png">
+
+    <link href="app.less" type="text/css" rel="stylesheet/less">
+    <link type="text/css" rel="stylesheet/less" href="bower_components/bootstrap/less/bootstrap.less">
+    <link type="text/css" rel="stylesheet/less" href="bower_components/fontawesome/less/font-awesome.less">
+</head>
+
+<body ng-app="kinder-app">
+
+    <script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC3ZHNBANkIOGZsJwv4iZyhqUzXnYrz2sk",
+            authDomain: "kindergarden-5bcfa.firebaseapp.com",
+            databaseURL: "https://kindergarden-5bcfa.firebaseio.com",
+            storageBucket: "kindergarden-5bcfa.appspot.com",
+            messagingSenderId: "594048241170"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!-- JS from Bower Components -->
+    <script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
+    <script src="bower_components/ui-select/dist/select.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+    <!-- Add New Bower Component JS Above -->
+
+    <!-- Main App JS -->
+    <script src="app.js"></script>
+    <script src="branch/service/branch-service.js"></script>
+    <script src="branch/view/add_branch.js"></script>
+
+    <!-- DAO -->
+    <script src="objects/school-dao.js"></script>
+
+    <!-- Services -->
+    <script src="services/school-service.js"></script>
+
+    <!-- view controllers -->
+    <script src="school/views/add/school-add.js"></script>
+    <script src="school/views/update/school-update.js"></script>
+    <script src="school/views/list/schools-list.js"></script>
+    <script src="common/directive/app-navigation/app-navigation.js"></script>
+
+    <!-- Add New Component JS Above -->
+
+    <div ng-view></div>
+
+</body>
+</html>

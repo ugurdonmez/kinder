@@ -1,0 +1,25 @@
+<div class="schools-list-div" ng-controller="SchoolsListCtrl">
+
+    <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="table-head">
+                        <tr>
+                            <th>{{translation.SCHOOL_ID_LABEL}}</th>
+                            <th>{{translation.SCHOOL_NAME_LABEL}}</th>
+                            <th>{{translation.SCHOOL_MANAGER_LABEL}}</th>
+                            <th>{{translation.SCHOOL_TELEPHONE_LABEL}}</th>
+                            <th>{{translation.EXPIRATION_DATE_LABEL}}</th>
+                        </tr>
+                    </thead>
+                    <tbody ng-repeat="(key, value) in schools">
+                        <tr>
+                            <td><a href="#/add_school/{{key}}">{{key}}</a></td>
+                            <td>{{value.name}}</td>
+                            <td>{{value.manager}}</td>
+                            <td>{{value.schoolTelephone}}</td>
+                            <td>{{value.membershipEnd}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+</div>

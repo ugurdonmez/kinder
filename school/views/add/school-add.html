@@ -1,0 +1,127 @@
+<!-- <app-navigation></app-navigation> -->
+<div class="add-edit-school-div" ng-controller="SchoolAddCtrl">
+
+    <p> {{translation.ADD_EDIT_SCHOOL}} </p>
+
+    <form ng-submit="addSchool()" name="addEditSchoolForm">
+
+        <div layout="row" layout-wrap>
+            <div flex="33">
+                <md-input-container class="md-icon-float md-block">
+                    <label>{{translation.SCHOOL_NAME_LABEL}}</label>
+                    <md-icon md-svg-src="img/icons/ic_school_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.name" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Manager Name</label>
+                    <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.manager" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Manager Telephone</label>
+                    <md-icon md-svg-src="img/icons/ic_phone_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.managerTelephone" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>School Telephone</label>
+                    <md-icon md-svg-src="img/icons/ic_phone_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.schoolTelephone" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+            </div>
+
+            <div flex="33">
+                <md-input-container class="md-icon-float md-block">
+                    <label>Mail</label>
+                    <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.activationEmail" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Second Contact Person</label>
+                    <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.secondContactPerson" id="" class="" type="text" value="" name="">
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Second Contact Number</label>
+                    <md-icon md-svg-src="img/icons/ic_phone_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.secondContantNo" id="" class="" type="text" value="" name="">
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Address</label>
+                    <md-icon md-svg-src="img/icons/ic_place_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.address" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+            </div>
+
+            <div flex="33">
+                <div class="form-group">
+                    <label for="s3fileInput" class="control-label">File</label>
+                    <input type="file" ngf-select ng-model="s3file" name="s3file" required ng-disabled="inputDisabled">
+                </div>
+            </div>
+        </div>
+
+        <div layout="row" layout-wrap>
+            <div flex="33">
+                <md-input-container class="md-icon-float md-block">
+                    <label>Branch Number</label>
+                    <md-icon md-svg-src="img/icons/ic_label_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.branchNumber" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Class Number</label>
+                    <md-icon md-svg-src="img/icons/ic_label_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.classNumber" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Student Number</label>
+                    <md-icon md-svg-src="img/icons/ic_label_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.studentNumber" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <label>Teacher Number</label>
+                    <md-icon md-svg-src="img/icons/ic_label_24px.svg" class="name"></md-icon>
+                    <input data-ng-model="school.teacherNumber" id="" class="" type="text" value="" name="" required>
+                </md-input-container>
+
+                <md-input-container class="md-icon-float md-block">
+                    <md-checkbox ng-disabled="true" data-ng-model="school.isActivated" >
+                        Activated
+                    </md-checkbox>
+                </md-input-container>
+            </div>
+
+            <div flex="33">
+                <md-input-container class="md-icon-float md-block">
+                    <div flex-gt-xs>
+                        <label>Membership Start</label>
+                        <md-datepicker data-ng-model="school.membershipStart"></md-datepicker>
+                    </div>
+                </md-input-container>
+            </div>
+
+            <div flex="33">
+                <md-input-container class="md-icon-float md-block">
+                    <div flex-gt-xs>
+                        <label>Membership End</label>
+                        <md-datepicker data-ng-model="school.membershipEnd"></md-datepicker>
+                    </div>
+                </md-input-container>
+            </div>
+        </div>
+
+        <div layout="row" layout-wrap>
+            <div class="form-group">
+                <button class="" type="submit" ng-disabled="">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

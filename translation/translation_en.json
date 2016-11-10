@@ -1,0 +1,11 @@
+{
+    "COLOR" : "Color",
+    "HELLO" : "Hello",
+    "HELLO_WORLD" : " Hello World!",
+    "ADD_EDIT_SCHOOL" : "Add/Edit School",
+    "SCHOOL_NAME_LABEL" : "School Name",
+    "SCHOOL_ID_LABEL" : "School ID",
+    "SCHOOL_MANAGER_LABEL" : "School Manager",
+    "SCHOOL_TELEPHONE_LABEL" : "School Telephone",
+    "EXPIRATION_DATE_LABEL" : "Expiration Date"
+}
