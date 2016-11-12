@@ -15,7 +15,7 @@ angular.module('kinder-app').config(function ($routeProvider) {
     $routeProvider.when('/add-school', {templateUrl: '/kinder/school/views/add/school-add.html'});
     $routeProvider.when('/update-school/:schoolId', {templateUrl: '/kinder/school/views/update/school-update.html'});
     $routeProvider.when('/list-schools', {templateUrl: '/kinder/school/views/list/schools-list.html'});
-    $routeProvider.otherwise({redirectTo: '/add_school'});
+    $routeProvider.otherwise({redirectTo: '/add-school'});
 });
 
 
