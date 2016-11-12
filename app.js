@@ -11,10 +11,10 @@ angular.module('kinder-app', [
     'ngResource']);
 
 angular.module('kinder-app').config(function ($routeProvider) {
-    $routeProvider.when('/add-branch', {templateUrl: '/kinder/branch/view/add_branch.html'});
-    $routeProvider.when('/add-school', {templateUrl: '/kinder/school/views/add/school-add.html'});
-    $routeProvider.when('/update-school/:schoolId', {templateUrl: '/kinder/school/views/update/school-update.html'});
-    $routeProvider.when('/list-schools', {templateUrl: '/kinder/school/views/list/schools-list.html'});
+    $routeProvider.when('/add-branch', {templateUrl: 'branch/view/add_branch.html'});
+    $routeProvider.when('/add-school', {templateUrl: 'school/views/add/school-add.html'});
+    $routeProvider.when('/update-school/:schoolId', {templateUrl: 'school/views/update/school-update.html'});
+    $routeProvider.when('/list-schools', {templateUrl: 'school/views/list/schools-list.html'});
     $routeProvider.otherwise({redirectTo: '/add-school'});
 });
 
