@@ -2,7 +2,7 @@ angular
     .module('kinder-app')
     .controller('SchoolsListCtrl', function($scope, $rootScope, SchoolService, TranslationService) {
 
-        $scope.translation = TranslationService.getTranslation($scope, 'tr');
+        TranslationService.getTranslation($scope, 'tr');
 
         $scope.init = function() {
 

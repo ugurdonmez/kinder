@@ -6,7 +6,7 @@ angular
         $scope.school = new School();
         $scope.school.isActivated = true;
 
-        $scope.translation = TranslationService.getTranslation($scope, 'tr');
+        TranslationService.getTranslation($scope, 'tr');
 
         $scope.addSchool = function() {
 
