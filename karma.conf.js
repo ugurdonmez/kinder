@@ -15,7 +15,40 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/*.test.js'
+        //JS from Bower Components
+        'bower_components/less.js/dist/less.js',
+        'bower_components/jquery/jquery.js',
+        'bower_components/bootstrap/dist/js/bootstrap.js',
+        'bower_components/lodash/lodash.js',
+        'bower_components/moment/moment.js',
+        'bower_components/angular/angular.js',
+        'bower_components/angular-route/angular-route.js',
+        'bower_components/angular-animate/angular-animate.js',
+        'bower_components/angular-resource/angular-resource.js',
+        'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+        'bower_components/angular-ui-utils/ui-utils.js',
+        'bower_components/ui-select/dist/select.js',
+        'bower_components/ng-file-upload/ng-file-upload-shim.js',
+        'bower_components/ng-file-upload/ng-file-upload.js',
+        'bower_components/angularfire/dist/angularfire.min.js',
+        'bower_components/angular-aria/angular-aria.js',
+        'bower_components/angular-material/angular-material.js',
+        'bower_components/angular-cookies/angular-cookies.js',
+        'bower_components/angular-mocks/angular-mocks.js',
+
+        //main app js
+        'app.js',
+        'branch/service/branch-service.js',
+        'branch/view/add_branch.js',
+        'objects/school-dao.js',
+        'services/school-service.js',
+        'school/views/add/school-add.js',
+        'school/views/update/school-update.js',
+        'school/views/list/schools-list.js',
+        'common/directive/app-navigation/app-navigation.js',
+
+        //'tests/*.test.js'
+        'tests/translation.service.test.js'
     ],
 
 

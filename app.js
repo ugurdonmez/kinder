@@ -18,7 +18,6 @@ angular.module('kinder-app').config(function ($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/add-school'});
 });
 
-
 var appSettings = {
 
 };
@@ -63,4 +62,3 @@ angular.element(document).ready(function() {
         });
 
 });
-
