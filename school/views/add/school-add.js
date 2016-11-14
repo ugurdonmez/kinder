@@ -3,7 +3,7 @@ angular
     .controller('SchoolAddCtrl', function($scope, SchoolService, TranslationService) {
 
         $scope.school = new School();
-        $scope.school.isActivated = true;
+        $scope.school.isActivated = false;
 
         TranslationService.getTranslation($scope, 'tr');
 
