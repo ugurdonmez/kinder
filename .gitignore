@@ -1,0 +1,11 @@
+.DS_Store
+.Rhistory
+bower_components/
+temp/
+dist/
+node_modules/
+fonts/
+todo.md
+local-settings.json
+npm-debug.log
+
