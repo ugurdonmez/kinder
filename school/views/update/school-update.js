@@ -1,28 +1,23 @@
 angular
     .module('kinder-app')
-    .controller('SchoolUpdateCtrl', function($scope, $routeParams, SchoolService, TranslationService) {
+    .controller('SchoolUpdateCtrl', function($scope, $routeParams, $rootScope, SchoolService, TranslationService) {
 
         $scope.schoolId = $routeParams.schoolId;
-        $scope.school = new School();
-        $scope.school.isActivated = true;
 
         TranslationService.getTranslation($scope, 'tr');
 
-        $scope.addSchool = function() {
-
-            var storageRef = firebase.storage().ref();
-            var mountainsRef = storageRef.child('mountains.jpg');
-
-            var file = $scope.s3file;
-            mountainsRef.put(file).then(function(snapshot) {
-                console.log('Uploaded a blob or file!');
-            });
-
-            SchoolService.addSchool($scope.school);
+        $scope.updateSchool = function() {
+            SchoolService.updateSchool($scope.schoolId, $scope.school);
+            $scope.init();
         };
 
         $scope.init = function() {
-
+            SchoolService.getSchool($scope.schoolId).then(function(response){
+                $scope.school = response.val();
+                $scope.school.membershipStart = new Date($scope.school.membershipStart);
+                $scope.school.membershipEnd = new Date($scope.school.membershipEnd);
+                $rootScope.safeApply();
+            });
         };
 
         $scope.uploadLogo = function() {
