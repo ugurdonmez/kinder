@@ -85,7 +85,7 @@ module.exports = function (grunt) {
                     module: pkg.name,
                     htmlmin: '<%= htmlmin.main.options %>'
                 },
-                src: [createFolderGlobs('*.html'), '!app.html', '!_SpecRunner.html'],
+                src: [createFolderGlobs('*.html'), '!index.html', '!_SpecRunner.html'],
                 dest: 'temp/templates.js'
             }
         },
@@ -101,13 +101,13 @@ module.exports = function (grunt) {
                         src: '.htaccess',
                         dest: 'dist/'
                     },{
-                        src: 'index.html',
-                        dest: 'dist/'
-                    },{
                         src: '**/*',
                         dest: 'fonts/',
                         cwd:'bower_components/bootstrap/fonts/',
                         expand: true
+                    },{
+                        src: 'translation/*',
+                        dest: 'dist/'
                     }
                 ]
             }
@@ -125,7 +125,7 @@ module.exports = function (grunt) {
                         writeto: 'appcss'
                     }]
                 },
-                src: 'app.html'
+                src: 'index.html'
             },
             'update-versioned': {
                 options: {
@@ -149,8 +149,8 @@ module.exports = function (grunt) {
                               'type="image/png"/>'
                     }]
                 },
-                src: 'app.html',
-                dest: 'dist/app.html'
+                src: 'index.html',
+                dest: 'dist/index.html'
             },
             update: {
                 options: {
@@ -174,8 +174,8 @@ module.exports = function (grunt) {
                               'type="image/png"/>'
                     }]
                 },
-                src: 'app.html',
-                dest: 'dist/app.html'
+                src: 'index.html',
+                dest: 'dist/index.html'
             }
         },
         cssmin: {
@@ -245,7 +245,7 @@ module.exports = function (grunt) {
                     removeStyleLinkTypeAttributes: true
                 },
                 files: {
-                    'dist/app.html': 'dist/app.html'
+                    'dist/index.html': 'dist/index.html'
                 }
             }
         },
