@@ -15,6 +15,7 @@ angular.module('kinder-app').config(function ($routeProvider) {
     $routeProvider.when('/add-school', {templateUrl: 'school/views/add/school-add.html'});
     $routeProvider.when('/update-school/:schoolId', {templateUrl: 'school/views/update/school-update.html'});
     $routeProvider.when('/list-schools', {templateUrl: 'school/views/list/schools-list.html'});
+    $routeProvider.when('/admin-signup', {templateUrl: 'admin/views/signup/admin-signup.html'});
     $routeProvider.otherwise({redirectTo: '/list-schools'});
 });
 
@@ -45,6 +46,19 @@ angular.module('kinder-app').service('TranslationService', function($resource) {
             $scope.translation = data;
         });
     };
+});
+
+angular.module('kinder-app').factory('Auth', function(){
+    var user;
+
+    return{
+        setUser : function(aUser){
+            user = aUser;
+        },
+        isLoggedIn : function(){
+            return (user) ? user : false;
+        }
+    }
 });
 
 // Manual bootstrap of the application
