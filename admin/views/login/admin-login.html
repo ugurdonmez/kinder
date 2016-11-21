@@ -1,0 +1,33 @@
+<h1 class="admin-signup-h1-title">Admin Sigup</h1>
+
+<div class="admin-signup-div" ng-controller="AdminLoginCtrl">
+    <form ng-submit="adminLoginSubmit()" name="adminSignup">
+
+        <div class="row">        
+            <div class="col span-1-of-2 admin-input-col">
+                <label class="admin-signup-label" for="name">Email</label>
+            </div>
+            <div class="col span-1-of-2 admin-signup-label-col admin-input-col">
+                <input data-ng-model="email" id="" class="admin-signup-input" type="email" value="" name="" placeholder="email" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col span-1-of-2 admin-input-col">
+                <label class="admin-signup-label" for="name">Password</label>
+            </div>
+            <div class="col span-1-of-2 admin-signup-label-col admin-input-col">
+                <input data-ng-model="password" id="" class="admin-signup-input" type="text" value="" name="" placeholder="password" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col span-1-of-2 admin-input-col">
+                <label>&nbsp;</label>
+            </div>
+            <div class="col span-1-of-2 admin-signup-label-col admin-input-col">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
