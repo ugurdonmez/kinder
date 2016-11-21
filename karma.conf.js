@@ -42,13 +42,13 @@ module.exports = function(config) {
         'branch/view/add_branch.js',
         'objects/school-dao.js',
         'services/school-service.js',
+        'services/cookie-service.js',
         'school/views/add/school-add.js',
         'school/views/update/school-update.js',
         'school/views/list/schools-list.js',
         'common/directive/app-navigation/app-navigation.js',
 
-        //'tests/*.test.js'
-        'tests/translation.service.test.js'
+        'tests/*.test.js'        
     ],
 
 
