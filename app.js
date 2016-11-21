@@ -16,6 +16,7 @@ angular.module('kinder-app').config(function ($routeProvider) {
     $routeProvider.when('/update-school/:schoolId', {templateUrl: 'school/views/update/school-update.html'});
     $routeProvider.when('/list-schools', {templateUrl: 'school/views/list/schools-list.html'});
     $routeProvider.when('/admin-signup', {templateUrl: 'admin/views/signup/admin-signup.html'});
+    $routeProvider.when('/admin-login', {templateUrl: 'admin/views/login/admin-login.html'});
     $routeProvider.otherwise({redirectTo: '/list-schools'});
 });
 
@@ -23,7 +24,7 @@ var appSettings = {
 
 };
 
-angular.module('kinder-app').run(function ($rootScope, $location) {
+angular.module('kinder-app').run(function ($rootScope, $location, Auth) {
 
     $rootScope.appSettings = _.defaults(appSettings, {});
 
@@ -37,6 +38,17 @@ angular.module('kinder-app').run(function ($rootScope, $location) {
             this.$apply(fn);
         }
     };
+    
+    $rootScope.$on('$routeChangeStart', function (event) {
+
+        if (!Auth.isLoggedIn()) {
+            console.log('DENY');
+            $location.path('/admin-login');
+        } else {
+            console.log('ALLOW');
+            $location.path('/list-schools');
+        }
+    });
 });
 
 angular.module('kinder-app').service('TranslationService', function($resource) {
@@ -48,7 +60,7 @@ angular.module('kinder-app').service('TranslationService', function($resource) {
     };
 });
 
-angular.module('kinder-app').factory('Auth', function(){
+angular.module('kinder-app').factory('Auth', function() {
     var user;
 
     return{
