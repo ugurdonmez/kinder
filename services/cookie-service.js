@@ -8,4 +8,8 @@ angular.module('kinder-app').service('CookieService', function ($cookies) {
         return $cookies.get(key);
     };
     
+    this.deleteFromCookie = function(key) {
+        $cookies.remove(key);    
+    };
+    
 });
