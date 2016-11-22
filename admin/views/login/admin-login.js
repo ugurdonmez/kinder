@@ -1,14 +1,8 @@
 angular
     .module('kinder-app')
-    .controller('AdminLoginCtrl', function($scope, $rootScope, $location, Auth, TranslationService) {
+    .controller('AdminLoginCtrl', function($scope, $rootScope, $location, TranslationService, UserService) {
 
         TranslationService.getTranslation($scope, 'tr');
-
-        $scope.checkLoginUser = function() {
-            if (Auth.isLoggedIn()) {
-                $location.path('/list-schools');
-            }
-        };
 
         $scope.adminLoginSubmit = function() {
             console.log($scope.email);
@@ -17,7 +11,6 @@ angular
             firebase.auth()
                 .signInWithEmailAndPassword($scope.email, $scope.password)
                 .then(function(user) {
-                    Auth.setUser(user);
                     $location.path('/list-schools');
                 }, function(error) {
                     var errorCode = error.code;
@@ -26,6 +19,4 @@ angular
                     console.log("login failed errorMessage: " + errorMessage);
             });
         };
-    
-        $scope.checkLoginUser();
 });

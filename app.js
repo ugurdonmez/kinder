@@ -24,7 +24,7 @@ var appSettings = {
 
 };
 
-angular.module('kinder-app').run(function ($rootScope, $location, Auth) {
+angular.module('kinder-app').run(function ($rootScope, $location) {
 
     $rootScope.appSettings = _.defaults(appSettings, {});
 
@@ -38,17 +38,6 @@ angular.module('kinder-app').run(function ($rootScope, $location, Auth) {
             this.$apply(fn);
         }
     };
-    
-    $rootScope.$on('$routeChangeStart', function (event) {
-
-        if (!Auth.isLoggedIn()) {
-            console.log('DENY');
-            $location.path('/admin-login');
-        } else {
-            console.log('ALLOW');
-            $location.path('/list-schools');
-        }
-    });
 });
 
 angular.module('kinder-app').service('TranslationService', function($resource) {
@@ -58,19 +47,6 @@ angular.module('kinder-app').service('TranslationService', function($resource) {
             $scope.translation = data;
         });
     };
-});
-
-angular.module('kinder-app').factory('Auth', function() {
-    var user;
-
-    return{
-        setUser : function(aUser){
-            user = aUser;
-        },
-        isLoggedIn : function(){
-            return (user) ? user : false;
-        }
-    }
 });
 
 // Manual bootstrap of the application
