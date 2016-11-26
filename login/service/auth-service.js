@@ -1,6 +1,6 @@
 angular
     .module('kinder-app')
-    .factory('AuthService', function ($http, $rootScope, Session, AUTH_EVENTS) {
+    .factory('AuthService', function ($http, $rootScope, Session, AUTH_EVENTS, CookieService, CookieSessionService) {
         
         var authService = {};
  
@@ -15,12 +15,11 @@ angular
                                    response.refreshToken,
                                    response.rd);
                     
-                    $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
-                
-                    // return response.email;
-            
-                }
-                , function(error) {
+                    CookieSessionService.saveSessionToCookie();
+                    
+                    $rootScope.$broadcast(AUTH_EVENTS.loginSuccess);            
+                }, 
+                function(error) {
                     var errorCode = error.code;
                     var errorMessage = error.message;
                     console.log("login failed errorCode: " + errorCode);
@@ -28,12 +27,10 @@ angular
                 
                     $rootScope.$broadcast(AUTH_EVENTS.loginFailed);
             });
-            
-            // return Session.email;
         };
  
         authService.isAuthenticated = function () {
-            return !!Session.userId;
+            return !!Session.uid;
         };
  
         authService.isAuthorized = function (authorizedRoles) {
