@@ -1,6 +1,6 @@
 angular
     .module('kinder-app')
-    .controller('LoginController', function ($scope, $rootScope, $rootScope, $location, AUTH_EVENTS, AuthService, Session, CookieService, CookieSessionService) {
+    .controller('LoginController', function ($scope, $rootScope, $rootScope, $location, AUTH_EVENTS, AuthService, Session, CookieSessionService) {
         $scope.credentials = {
             email: '',
             password: ''
