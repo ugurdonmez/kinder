@@ -1,4 +1,4 @@
-<nav>
+<nav class="nav-top">
     <div class="row">
         <h2 ng-if="currentMenuItem === 'list-schools'" class="head">{{translation.LIST_SCHOOLS_URL_TITLE}}</h2>
         <h2 ng-if="currentMenuItem === 'add-school'" class="head">{{translation.ADD_SCHOOL_URL_TITLE}}</h2>
@@ -9,7 +9,7 @@
                 <a href="#/list-schools">{{translation.LIST_SCHOOLS_URL_TITLE}}</a>
             </li>
             <li ng-class="{'active': currentMenuItem === 'add-school'}">
-                <a href="#/add-School">{{translation.ADD_SCHOOL_URL_TITLE}}</a>
+                <a href="#/add-school">{{translation.ADD_SCHOOL_URL_TITLE}}</a>
             </li>
             <li>
                 <a href="#/admin-login">{{translation.ADMIN_LOGIN_URL_TITLE}}</a>
