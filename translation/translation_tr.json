@@ -4,7 +4,12 @@
     "ADD_EDIT_SCHOOL" : "Okul Ekle/Cikar",
     "SCHOOL_NAME_LABEL" : "Okul Ismi",
     "SCHOOL_ID_LABEL" : "Okul Numarasi",
-    "SCHOOL_MANAGER_LABEL" : "Maneger Ismi",
+    "SCHOOL_MANAGER_LABEL" : "Yonetici Ismi",
     "SCHOOL_TELEPHONE_LABEL" : "Okul Telefonu",
-    "EXPIRATION_DATE_LABEL" : "Son Tarih"
+    "EXPIRATION_DATE_LABEL" : "Son Tarih",
+    "LIST_SCHOOLS_URL_TITLE" : "Okul Listesi",
+    "ADD_SCHOOL_URL_TITLE" : "Okul Ekle",
+    "UPDATE_SCHOOL_URL_TITLE" : "Okul Guncelle",
+    "ADMIN_LOGIN_URL_TITLE" : "Admin Login",
+    "NAVIGATION_ADD_SCHOOL_TITLE" : "Okul Ekle"
 }

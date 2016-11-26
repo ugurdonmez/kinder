@@ -1,11 +1,19 @@
 <nav>
     <div class="row">
-        <h2 class="head">List Schools</h2>
+        <h2 ng-if="currentMenuItem === 'list-schools'" class="head">{{translation.LIST_SCHOOLS_URL_TITLE}}</h2>
+        <h2 ng-if="currentMenuItem === 'add-school'" class="head">{{translation.ADD_SCHOOL_URL_TITLE}}</h2>
+        <h2 ng-if="currentMenuItem === 'update-school'" class="head">{{translation.UPDATE_SCHOOL_URL_TITLE}}</h2>
         <!-- <img class="logo" src="resources/img/logo-white.png" alt="Omnifood logo"> -->
         <ul class="main-nav">
-            <li><a href="#">Add School</a></li>
-            <li><a href="#">List Schools</a></li>
-            <li><a href="#/admin-login">Admin Login</a></li>
+            <li ng-class="{'active': currentMenuItem === 'list-schools'}">
+                <a href="#/list-schools">{{translation.LIST_SCHOOLS_URL_TITLE}}</a>
+            </li>
+            <li ng-class="{'active': currentMenuItem === 'add-school'}">
+                <a href="#/add-School">{{translation.ADD_SCHOOL_URL_TITLE}}</a>
+            </li>
+            <li>
+                <a href="#/admin-login">{{translation.ADMIN_LOGIN_URL_TITLE}}</a>
+            </li> 
         </ul>
     </div>
 </nav>
