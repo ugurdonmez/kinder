@@ -18,7 +18,7 @@ angular.module('kinder-app').config(function ($routeProvider) {
     $routeProvider.when('/list-schools', {templateUrl: 'school/views/list/schools-list.html'});
     $routeProvider.when('/admin-signup', {templateUrl: 'admin/views/signup/admin-signup.html'});
     $routeProvider.when('/admin-login', {templateUrl: 'admin/views/login/admin-login.html'});
-    $routeProvider.otherwise({redirectTo: '/list-schools'});
+    $routeProvider.otherwise({redirectTo: '/admin-login'});
 });
 
 angular.module('kinder-app').config(function ($stateProvider, USER_ROLES) {
@@ -49,9 +49,9 @@ angular.module('kinder-app').run(function ($rootScope, $location, AUTH_EVENTS, A
             this.$apply(fn);
         }
     };
-    
+
     $rootScope.$on('$stateChangeStart', function (event, next) {
-        
+
         var authorizedRoles = next.data.authorizedRoles;
         if (!AuthService.isAuthorized(authorizedRoles)) {
             event.preventDefault();
@@ -78,7 +78,7 @@ angular.module('kinder-app').config(function ($httpProvider) {
 angular.module('kinder-app').factory('AuthInterceptor', function ($rootScope, $q,
                                       AUTH_EVENTS) {
   return {
-    responseError: function (response) { 
+    responseError: function (response) {
       $rootScope.$broadcast({
         401: AUTH_EVENTS.notAuthenticated,
         403: AUTH_EVENTS.notAuthorized,

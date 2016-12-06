@@ -7,7 +7,7 @@ angular
         $scope.adminSignupSubmit = function() {
             console.log($scope.email);
             console.log($scope.password);
-            
+
             firebase.auth()
                 .createUserWithEmailAndPassword($scope.email, $scope.password)
                 .catch(function(err){
@@ -15,6 +15,8 @@ angular
                     var errorMessage = error.message;
                     console.log("ERROR");
                     console.log(errorCode, errorMessage);
+
+                    // TODO: redirect to login page
             });
         };
 });

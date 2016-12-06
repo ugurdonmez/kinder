@@ -9,6 +9,9 @@ angular
 
         $scope.addSchool = function() {
 
+            /*
+            image upload
+
             var storageRef = firebase.storage().ref();
             var mountainsRef = storageRef.child('mountains.jpg');
 
@@ -16,6 +19,7 @@ angular
             mountainsRef.put(file).then(function(snapshot) {
                 console.log('Uploaded a blob or file!');
             });
+            */
 
             SchoolService.addSchool($scope.school);
         };

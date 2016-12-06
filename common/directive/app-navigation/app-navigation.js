@@ -5,9 +5,9 @@ angular.module('kinder-app').directive('appNavigation', function ($rootScope, $l
         scope: {},
         templateUrl: 'common/directive/app-navigation/app-navigation.html',
         link: function (scope, element, attrs, fn) {
-            
+
             TranslationService.getTranslation(scope, 'tr');
-            
+
             scope.currentMenuItem = "list-schools";
 
             var getCurrentMenuItem = function (currentPath) {
@@ -21,7 +21,7 @@ angular.module('kinder-app').directive('appNavigation', function ($rootScope, $l
                     return "";
                 }
 			};
-            
+
             scope.$on('$locationChangeSuccess', function(event, data) {
                 scope.currentMenuItem = getCurrentMenuItem(data);
             });
