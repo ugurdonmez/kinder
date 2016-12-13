@@ -1,11 +1,18 @@
 angular
     .module('kinder-app')
-    .controller('SchoolAddCtrl', function($scope, SchoolService, TranslationService) {
+    .controller('SchoolAddCtrl', function($scope, ,$rootScope, $location, SchoolService, TranslationService, UserService) {
 
         $scope.school = new School();
         $scope.school.isActivated = false;
 
         TranslationService.getTranslation($scope, 'tr');
+    
+        $scope.checkLogin = function() {
+            if (!UserService.isUserLoggedIn()) {
+                $location.path('/admin-login');
+                $rootScope.safeApply();
+            }
+        };
 
         $scope.addSchool = function() {
 
@@ -33,5 +40,6 @@ angular
         };
 
         $scope.init();
-
+        
+        $scope.checkLogin();
 });
