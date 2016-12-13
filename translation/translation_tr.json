@@ -11,5 +11,6 @@
     "ADD_SCHOOL_URL_TITLE" : "Okul Ekle",
     "UPDATE_SCHOOL_URL_TITLE" : "Okul Guncelle",
     "ADMIN_LOGIN_URL_TITLE" : "Admin Login",
+    "ADMIN_LOGOUT_URL_TITLE" : "Admin Logout",
     "NAVIGATION_ADD_SCHOOL_TITLE" : "Okul Ekle"
 }

@@ -16,7 +16,8 @@ angular
             console.log($scope.password);
 
             UserService.login($scope.email, $scope.password);
-            $scope.checkAlreadyLogin();
+            $location.path('/list-schools');
+            $rootScope.safeApply();
         };
 
         $scope.checkAlreadyLogin();

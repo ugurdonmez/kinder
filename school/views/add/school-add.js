@@ -1,6 +1,6 @@
 angular
     .module('kinder-app')
-    .controller('SchoolAddCtrl', function($scope, ,$rootScope, $location, SchoolService, TranslationService, UserService) {
+    .controller('SchoolAddCtrl', function($scope, $rootScope, $location, SchoolService, TranslationService, UserService) {
 
         $scope.school = new School();
         $scope.school.isActivated = false;

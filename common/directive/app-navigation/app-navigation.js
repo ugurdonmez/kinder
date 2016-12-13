@@ -1,4 +1,4 @@
-angular.module('kinder-app').directive('appNavigation', function ($rootScope, $location, TranslationService) {
+angular.module('kinder-app').directive('appNavigation', function ($rootScope, $location, TranslationService, UserService) {
     return {
         restrict: 'E',
         replace: true,
@@ -9,6 +9,13 @@ angular.module('kinder-app').directive('appNavigation', function ($rootScope, $l
             TranslationService.getTranslation(scope, 'tr');
 
             scope.currentMenuItem = "list-schools";
+            
+            scope.logout = function() {
+                UserService.logout();
+                console.log("logout clicked");
+            };
+            
+            scope.isLoggedIn = UserService.isUserLoggedIn();
 
             var getCurrentMenuItem = function (currentPath) {
                 if (currentPath.indexOf("list-schools") !== -1) {
@@ -26,7 +33,7 @@ angular.module('kinder-app').directive('appNavigation', function ($rootScope, $l
                 scope.currentMenuItem = getCurrentMenuItem(data);
             });
 
-            scope.currentMenuItem = getCurrentMenuItem($location.path());
+            scope.currentMenuItem = getCurrentMenuItem($location.path());            
         }
     };
 });
