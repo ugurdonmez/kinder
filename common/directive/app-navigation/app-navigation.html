@@ -4,10 +4,13 @@
         <h2 ng-if="currentMenuItem === 'add-school'" class="head">{{translation.ADD_SCHOOL_URL_TITLE}}</h2>
         <h2 ng-if="currentMenuItem === 'update-school'" class="head">{{translation.UPDATE_SCHOOL_URL_TITLE}}</h2>
         <ul class="main-nav">
-            <li ng-if="!isLoggedIn">
+            <li>
+                {{getText()}}
+            </li>
+            <li>
                 <a href="#/admin-login">{{translation.ADMIN_LOGIN_URL_TITLE}}</a>
             </li>
-            <li ng-if="isLoggedIn">
+            <li>
                 <a href="#" ng-click="logout()">{{translation.ADMIN_LOGOUT_URL_TITLE}}</a>
             </li>
             <li ng-class="{'active': currentMenuItem === 'list-schools'}">

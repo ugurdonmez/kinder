@@ -5,6 +5,10 @@ angular.module('kinder-app').directive('appNavigation', function ($rootScope, $l
         scope: {},
         templateUrl: 'common/directive/app-navigation/app-navigation.html',
         link: function (scope, element, attrs, fn) {
+            
+            scope.getText = function(){
+                return scope.isLoggedIn;
+            };
 
             TranslationService.getTranslation(scope, 'tr');
 

@@ -12,12 +12,8 @@ angular
         };
 
         $scope.adminLoginSubmit = function() {
-            console.log($scope.email);
-            console.log($scope.password);
-
             UserService.login($scope.email, $scope.password);
             $location.path('/list-schools');
-            $rootScope.safeApply();
         };
 
         $scope.checkAlreadyLogin();
