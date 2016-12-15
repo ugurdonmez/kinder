@@ -54,13 +54,16 @@
                     <input data-ng-model="school.address" id="" class="" type="text" value="" name="" required>
                 </md-input-container>
             </div>
-
+            
+            <!--
             <div flex="100" class="input-row">
                 <div class="form-group">
                     <label for="s3fileInput" class="control-label">School logo</label>
-                    <input type="file" ngf-select ng-model="s3file" name="s3file" required ng-disabled="inputDisabled">
+                    <input type="file" ngf-select ng-model="s3file" name="s3file" required ng-disabled="inputDisabled" ng-change="uploadImage()">
                 </div>
             </div>
+
+            -->
         </div>
 
         <div layout="row" layout-wrap>

@@ -3,6 +3,14 @@
     <form ng-submit="updateSchool()" name="addEditSchoolForm">
 
         <div layout="row" layout-wrap>
+            
+            <div flex="100" class="input-row">
+                <div class="form-group">
+                    <label for="s3fileInput" class="control-label">Upload School Logo</label>
+                    <input type="file" ngf-select ng-model="s3file" name="s3file" required ng-disabled="inputDisabled" ng-change="uploadImage()">
+                </div>
+            </div>
+            
             <div flex="100" class="input-row">
                 <md-input-container class="md-icon-float md-block">
                     <label>{{translation.SCHOOL_NAME_LABEL}}</label>
@@ -53,13 +61,6 @@
                     <md-icon md-svg-src="assests/img/icons/ic_place_24px.svg" class="name"></md-icon>
                     <input data-ng-model="school.address" id="" class="" type="text" value="" name="" required>
                 </md-input-container>
-            </div>
-
-            <div flex="100" class="input-row">
-                <div class="form-group">
-                    <label for="s3fileInput" class="control-label">File</label>
-                    <input type="file" ngf-select ng-model="s3file" name="s3file" required ng-disabled="inputDisabled">
-                </div>
             </div>
         </div>
 

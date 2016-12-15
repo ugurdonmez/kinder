@@ -13,6 +13,28 @@ angular
                 $rootScope.safeApply();
             }
         };
+        
+        /*
+        $scope.uploadImage = function() {
+            
+            if (!$scope.s3file) {
+                console.log("file undefined!");
+                return;
+            }
+            
+            var storageRef = firebase.storage().ref();
+            var mountainsRef = storageRef.child('mountains.jpg');
+
+            var file = $scope.s3file;
+            mountainsRef.put(file).then(function(snapshot) {
+                console.log('Uploaded a blob or file!');
+            });
+            
+            console.log($scope.s3file);
+            
+            console.log("photo changed.");
+        };
+        */
 
         $scope.addSchool = function() {
 
@@ -27,6 +49,8 @@ angular
                 console.log('Uploaded a blob or file!');
             });
             */
+            
+            $scope.school.logoURL = '';
 
             SchoolService.addSchool($scope.school);
         };
