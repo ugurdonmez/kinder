@@ -9,6 +9,9 @@
                     <label for="s3fileInput" class="control-label">Upload School Logo</label>
                     <input type="file" ngf-select ng-model="s3file" name="s3file" required ng-disabled="inputDisabled" ng-change="uploadImage()">
                 </div>
+                
+                 <img ng-if="school.logoURL != ''" src="{{school.logoURL}}" alt="School logo" style="width:304px;height:228px;">
+                
             </div>
             
             <div flex="100" class="input-row">
