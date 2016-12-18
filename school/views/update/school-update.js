@@ -1,38 +1,13 @@
 angular
     .module('kinder-app')
-    .controller('SchoolUpdateCtrl', function($scope, $rootScope, $location, $routeParams, $rootScope, SchoolService, TranslationService, UserService) {
+    .controller('SchoolUpdateCtrl', function($scope, $rootScope, $location, $routeParams, $rootScope, SchoolService, TranslationService, CookieSessionService, AuthService) {
 
-        $scope.schoolId = $routeParams.schoolId;
-
-        TranslationService.getTranslation($scope, 'tr');
-    
         $scope.uploadImage = function() {
-            
-            console.log("photo upload");
-            
-            /*
-            if (!$scope.s3file) {
-                console.log("file undefined!");
-                return;
-            }
-            
-            var storageRef = firebase.storage().ref();
-            var mountainsRef = storageRef.child($scope.schoolId + '.jpg');
 
-            var file = $scope.s3file;
-            mountainsRef.put(file).then(function(snapshot) {
-                console.log('Uploaded a blob or file!');
-            });
-            
-            console.log($scope.s3file);
-            
-            console.log("photo changed.");
-            */
-            
-            
-            
+            console.log("photo upload");
+
             var storageRef = firebase.storage().ref();
-            
+
             // File or Blob named mountains.jpg
             var file = $scope.s3file;
 
@@ -79,12 +54,13 @@ angular
                     $scope.school.logoURL = downloadURL;
                     console.log($scope.school);
             });
-            
+
         };
-    
-        $scope.checkLogin = function() {
-            if (!UserService.isUserLoggedIn()) {
-                $location.path('/admin-login');
+
+        $scope.checkLoginSchoolUpdate = function() {
+            if (!AuthService.isAuthenticated()) {
+                console.log('SchoolUpdate : redirect to login');
+                $location.path('/login');
                 $rootScope.safeApply();
             }
         };
@@ -94,7 +70,7 @@ angular
             $scope.init();
         };
 
-        $scope.init = function() {
+        $scope.initSchoolUpdate = function() {
             SchoolService.getSchool($scope.schoolId).then(function(response){
                 $scope.school = response.val();
                 $scope.school.membershipStart = new Date($scope.school.membershipStart);
@@ -103,11 +79,10 @@ angular
             });
         };
 
-        $scope.uploadLogo = function() {
+        $scope.checkLoginSchoolUpdate();
+        $scope.initSchoolUpdate();
 
-        };
+        $scope.schoolId = $routeParams.schoolId;
 
-        $scope.init();
-        
-        $scope.checkLogin();
+        TranslationService.getTranslation($scope, 'tr');
 });
