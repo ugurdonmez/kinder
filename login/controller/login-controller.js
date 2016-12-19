@@ -1,6 +1,6 @@
 angular
     .module('kinder-app')
-    .controller('LoginController', function ($scope, $rootScope, $rootScope, $location, AUTH_EVENTS, AuthService, UserService, Session) {
+    .controller('LoginController', function ($scope, $rootScope, $rootScope, $location, AUTH_EVENTS, AuthService, Session) {
 
         console.log('login controller runs');
 
@@ -10,7 +10,7 @@ angular
         };
 
         $scope.login = function (credentials) {
-            UserService.login(credentials);
+            AuthService.login(credentials);
 
             $scope.$on(AUTH_EVENTS.loginSuccess, function(event, args) {
                 console.log('login success.');
@@ -32,5 +32,5 @@ angular
             }
         };
 
-        $scope.checkLoginAdminPage();
+        // $scope.checkLoginAdminPage();
 });

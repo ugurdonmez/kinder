@@ -1,6 +1,6 @@
 angular
     .module('kinder-app')
-    .controller('SchoolAddCtrl', function($scope, $rootScope, $location, SchoolService, TranslationService, CookieSessionService, AuthService) {
+    .controller('SchoolAddCtrl', function($scope, $rootScope, $location, SchoolService, TranslationService, CookieSessionService, AuthService, EmailService) {
 
         console.log('school add run');
 
@@ -18,6 +18,7 @@ angular
         $scope.addSchool = function() {
             $scope.school.logoURL = '';
             SchoolService.addSchool($scope.school);
+            EmailService.addEmail($scope.school.activationEmail, 'school-admin');
         };
 
         $scope.checkLoginSchoolAdd();
