@@ -73,16 +73,17 @@ angular
         $scope.initSchoolUpdate = function() {
             SchoolService.getSchool($scope.schoolId).then(function(response){
                 $scope.school = response.val();
+                console.log(response.val());
                 $scope.school.membershipStart = new Date($scope.school.membershipStart);
                 $scope.school.membershipEnd = new Date($scope.school.membershipEnd);
                 $rootScope.safeApply();
             });
         };
 
+        $scope.schoolId = $routeParams.schoolId;
+
         $scope.checkLoginSchoolUpdate();
         $scope.initSchoolUpdate();
-
-        $scope.schoolId = $routeParams.schoolId;
 
         TranslationService.getTranslation($scope, 'tr');
 });
